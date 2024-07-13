@@ -1,0 +1,42 @@
+version: '3.9'
+
+networks:
+  webMethodsMigrator:
+    driver: bridge
+    name: webMethodsMigrator
+
+services:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                    DATABASE                         #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                   BACK-TEND                         #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+ back-end:
+    networks:
+    - webMethodsMigrator
+    build: srcs/back-end
+    container_name: back-end
+    image: back-end
+    ports:
+      - "4000:4000"
+    volumes:
+      - "./srcs/back-end/webmethodsmigrator:/webmethodsmigrator"
+    restart: always
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                   FRONT-TEND                        #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+ front-end:
+    depends_on:
+     - back-end
+    networks:
+      - webMethodsMigrator
+    build: srcs/front-end
+    container_name: front-end
+    image: front-end
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./srcs/front-end/webmethodsmigrator:/webmethodsmigrator"
+    restart: always
+
