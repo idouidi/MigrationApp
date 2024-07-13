@@ -1,0 +1,11 @@
+BLX_ARIANE,AGL_ARIANE
+BLX_ESB,AGL_ESB
+BLX-,AGL-
+BLX_,AGL_
+BLX,AGL
+<value name="to">([^<]+)<\/value>, <value name="to">e-nicolas.kourban@aglgroup.com</value>
+<value name="cc">([^<]+)<\/value>, <value name="cc">e-ilyes.douidi@aglgroup.com</value>
+<value name="from">([^<]+)<\/value>, <value name="from">agl_NoReply@aglgroup.com</value>
+<value name="To:">([^<]+)<\/value>, <value name="To:">e-nicolas.kourban@aglgroup.com</value>
+<value name="CC:">([^<]+)<\/value>, <value name="CC:">e-ilyes.douidi@aglgroup.com</value>
+<value name="From:">([^<]+)<\/value>, <value name="From:">agl_NoReply@aglgroup.com</value>

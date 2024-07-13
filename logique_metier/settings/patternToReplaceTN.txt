@@ -1,0 +1,8 @@
+BLX_ARIANE,AGL
+ARIANE_,AGL_
+BLX_ESB,AGL
+BLX-,AGL-
+BLX_,AGL_
+BLX,AGL
+Ariane,AGL
+([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+), e\-nicolas.kourban\@aglgroup.com
