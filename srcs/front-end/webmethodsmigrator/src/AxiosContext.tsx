@@ -1,12 +1,22 @@
+// src/AxiosContext.tsx
 
-import React, { createContext, useContext } from 'react';
-import axios from 'axios';
+import React, { createContext, useContext, ReactNode } from 'react';
+import axios, { AxiosInstance } from 'axios';
 
-const AxiosContext = createContext(axios);
+const AxiosContext = createContext<AxiosInstance | undefined>(undefined);
 
-const AxiosProvider: React.FC = ({ children }) => {
+interface AxiosProviderProps {
+  children: ReactNode;
+}
+
+export const AxiosProvider: React.FC<AxiosProviderProps> = ({ children }) => {
+  // Determine the base URL based on the environment
+  // Assuming the front-end and back-end are in the same Docker network
+  const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:4000'; // 
+
+  // Create the Axios instance with baseURL
   const axiosInstance = axios.create({
-    baseURL: 'http://localhost:4000',
+    baseURL: baseURL,
   });
 
   // Optional: Add interceptors to handle request/response or errors globally
@@ -37,8 +47,10 @@ const AxiosProvider: React.FC = ({ children }) => {
   );
 };
 
-export const useAxios = () => {
-  return useContext(AxiosContext);
+export const useAxios = (): AxiosInstance => {
+  const context = useContext(AxiosContext);
+  if (!context) {
+    throw new Error('useAxios must be used within an AxiosProvider');
+  }
+  return context;
 };
-
-export default AxiosProvider;

@@ -1,0 +1,19 @@
+{
+    "._inbound": "",
+    "._outbound": "",
+    ".inbound":"",
+    ".outbound":"",
+    ".services.":".",
+    ".services:":".pub:",
+    ".gateway.": ".",
+    ".b2b.broadcastPeople": ".broadcastPeople",
+    ".broadcastPeople" : "",
+    "mdmMs" : "",
+    ".b2b." : ".",
+    ".vesselName." : ".",
+    ".vesselName:" : ".ff:",
+    ".adaptersServices:": ".priv:",
+    ".transac.": ".",
+    ".outGeneric": "",
+    ".extractNormsMoiraData" : ""
+}

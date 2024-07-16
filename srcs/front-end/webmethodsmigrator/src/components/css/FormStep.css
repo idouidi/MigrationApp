@@ -1,0 +1,27 @@
+.form-step {
+    margin-bottom: 20px;
+  }
+  
+  .form-header {
+    margin-bottom: 20px;
+  }
+  
+  .upload-container {
+    border: 2px dashed #d3d3d3;
+    padding: 40px;
+    margin: 20px 0;
+  }
+  
+  .upload-box {
+    color: #a0a0a0;
+  }
+  
+  .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }

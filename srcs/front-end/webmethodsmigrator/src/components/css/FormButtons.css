@@ -1,0 +1,23 @@
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .prev-button,
+  .next-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .prev-button {
+    background-color: #d3d3d3;
+  }
+  
+  .next-button {
+    background-color: #4caf50;
+  }
+  
