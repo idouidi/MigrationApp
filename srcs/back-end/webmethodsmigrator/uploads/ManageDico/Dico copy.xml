@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Values version="2.0">
+  <array name="servicesRefactorDocs" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="targetpkg">AglSage</value>
+      <array name="services" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._outbound.services.pub:initSage</value>
+          <value name="newName">AglSage.pub:initSage</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.triggers:outboundB2bPollingTrigger</value>
+          <value name="newName">AglSage.triggers:outboundB2bPollingTrigger</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.services.pub:processSage</value>
+          <value name="newName">AglSage.pub:processSage</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.services.priv:mappingToHub</value>
+          <value name="newName">AglSage.priv:mappingToHub</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="targetpkg">AglSOUGE</value>
+      <array name="services" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._outbound.services.pub:initSage</value>
+          <value name="newName">AglSage.pub:initSage</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.triggers:outboundB2bPollingTrigger</value>
+          <value name="newName">AglSage.triggers:outboundB2bPollingTrigger</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.services.pub:processSage</value>
+          <value name="newName">AglSage.pub:processSage</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.services.priv:mappingToHub</value>
+          <value name="newName">AglSage.priv:mappingToHub</value>
+        </record>
+      </array>
+    </record>
+  </array>
+  <array name="jarsToCopy" type="record" depth="1">
+    <record javaclass="com.wm.data.ISMemDataImpl">
+      <value name="oldPkg">BlxFramework</value>
+      <value name="newPkg">AglFmkPublic</value>
+      <value name="jarName">org-apache-commons-lang.jar</value>
+    </record>
+    <record javaclass="com.wm.data.ISMemDataImpl">
+      <value name="oldPkg">BlxFramework</value>
+      <value name="newPkg">AglFmkPublic</value>
+      <value name="jarName">json.jar</value>
+    </record>
+  </array>
+</Values>

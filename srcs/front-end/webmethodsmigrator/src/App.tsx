@@ -46,7 +46,7 @@ const App: React.FC = () => {
     {
       stepNumber: 2,
       description: 'Enter your JSON pattern.',
-      content: <PaternJson onJsonSubmit={handleJsonSubmit} />,
+      content: <PaternJson onJsonSubmit={handleJsonSubmit}/>,
       validator: () => isJsonSubmitted,
       validationMessage: 'Please submit a valid JSON first.'
     }

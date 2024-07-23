@@ -22,7 +22,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileUpload }) => {
           const formData = new FormData();
           formData.append("file", file);
 
-          const response = await axios.post("/uploads", formData);
+          const response = await axios.post("/uploads/entryData", formData);
 
           if (response.status === 201) {
             onFileUpload(true);

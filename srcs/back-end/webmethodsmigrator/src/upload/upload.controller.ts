@@ -6,12 +6,13 @@ import { join } from 'path';
 import * as fs from 'fs';
 import { diskStorage } from 'multer'; 
 
+
 @Controller('uploads')
 export class UploadController {
 
   constructor(private readonly uploadsService: UploadService) {}
 
-  @Post()
+  @Post('entryData')
   @UseInterceptors(FileInterceptor('file', {
     storage: diskStorage({
       destination: (_req, _file, cb) => {
