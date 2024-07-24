@@ -1,9 +1,10 @@
-import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus, Res } from '@nestjs/common';
 import { join } from 'path';
 import * as fs from 'fs';
 import { CreateUploadDto } from './dto/create-upload.dto';
 import * as xml2js from 'xml2js';
 import * as archiver from 'archiver';
+import { Response } from 'express';
 
 interface Service {
   oldName: string;
@@ -181,47 +182,45 @@ export class UploadService {
     }
   }
 
-  async validatePattern() {
+  async validatePattern(): Promise<string> {
     try {
-      // Créer un fichier ZIP contenant tous les répertoires de this.newPackagesDir
+      // Créer un fichier ZIP contenant tous les répertoires de this.refPackagesDir
       const outputZipPath = join(__dirname, 'newPackages.zip');
       const output = fs.createWriteStream(outputZipPath);
       const archive = archiver('zip', {
         zlib: { level: 9 } // Niveau de compression maximum
       });
-  
+
       // Gérer les événements de flux
       output.on('close', () => {
         console.log(`${archive.pointer()} total bytes`);
         console.log('archiver has been finalized and the output file descriptor has closed.');
       });
-  
+
       archive.on('warning', (err) => {
         if (err.code !== 'ENOENT') {
           throw err;
         }
       });
-  
+
       archive.on('error', (err) => {
         throw err;
       });
-  
+
       // Lancer l'archivage
       archive.pipe(output);
-  
-      // Ajouter les répertoires et fichiers de this.newPackagesDir
+
+      // Ajouter les répertoires et fichiers de this.refPackagesDir
       archive.directory(this.refPackagesDir, false);
-  
+
       await archive.finalize();
-  
-      return {
-        statusCode: HttpStatus.CREATED,
-        message: 'Pattern validation successful!',
-        zipPath: outputZipPath // Vous pouvez également retourner le chemin du fichier ZIP si nécessaire
-      };
+
+      // Retourner le chemin du fichier ZIP
+      return outputZipPath;
+
     } catch (error) {
+      console.error('Error during pattern validation:', error.message);
       throw new HttpException('Error during pattern validation', HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
-  
 }

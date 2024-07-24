@@ -3,26 +3,11 @@ import FormStep from './components/FormStep/FormStep';
 import FileUploader from './components/FormStep/FileUploader';
 import PaternJson from './components/FormStep/PaternJson';
 import './App.css';
+import FileDownloader from './components/FormStep/FileDownloader';
 
 const App: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(2);
-  const [isUploaded, setIsUploaded] = useState(false);
-  const [isJsonSubmitted, setIsJsonSubmitted] = useState(false);
-
-  const handleFileUpload = (success: boolean) => {
-    setIsUploaded(success);
-    if (success) {
-      moveToNextStep();  // Move to next step after successful upload
-    }
-  };
-
-  const handleJsonSubmit = (success: boolean) => {
-    setIsJsonSubmitted(success);
-    if (success) {
-      moveToNextStep();  // Move to next step after successful JSON submission
-    }
-  };
-
+ 
   const handlePrevious = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
@@ -30,7 +15,9 @@ const App: React.FC = () => {
   };
 
   const moveToNextStep = () => {
-    setCurrentStep(currentStep + 1);
+    if (currentStep < steps.length) {
+      setCurrentStep(currentStep + 1);
+    }
   };
 
   const steps = [
@@ -39,12 +26,10 @@ const App: React.FC = () => {
       description: 'Upload your file containing, list of trigger, documentfile, service, etc...',
       content: (
         <FileUploader
-          isUploaded={isUploaded}  // Pass the isUploaded state
-          onFileUpload={handleFileUpload}
           onPrevious={handlePrevious}
+          onNext={moveToNextStep}
         />
       ),
-      validator: () => isUploaded,
       validationMessage: 'Please upload a file first.'
     },
     {
@@ -52,13 +37,21 @@ const App: React.FC = () => {
       description: 'Enter your JSON pattern.',
       content: (
         <PaternJson
-          onJsonSubmit={handleJsonSubmit}
           onPrevious={handlePrevious}
           onNext={moveToNextStep}
         />
       ),
-      validator: () => isJsonSubmitted,
       validationMessage: 'Please submit a valid JSON first.'
+    },
+    {
+      stepNumber: 3,
+      description: 'Review your JSON pattern.',
+      content: (
+        <FileDownloader
+          onPrevious={handlePrevious}
+        />
+      ),
+      validationMessage: 'Please review your JSON first.'
     }
   ];
 

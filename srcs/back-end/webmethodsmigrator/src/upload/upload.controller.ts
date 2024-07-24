@@ -1,10 +1,12 @@
-import { Controller, Post, UploadedFile, UseInterceptors, Body, HttpException} from '@nestjs/common';
+import { Controller, Post, UploadedFile, UseInterceptors, Body, HttpException, Res} from '@nestjs/common';
+import { Response } from 'express'; 
 import { FileInterceptor } from '@nestjs/platform-express';
 import { CreateUploadDto } from './dto/create-upload.dto';
 import { UploadService } from './upload.service';
 import { join } from 'path';
 import * as fs from 'fs';
-import { diskStorage } from 'multer'; 
+import { diskStorage } from 'multer';
+
 
 
 @Controller('uploads')
@@ -52,11 +54,27 @@ export class UploadController {
     }
   }
   
+  
   @Post('pattern/validate')
-  async validatePattern(){
+  async validatePattern(@Res() res: Response) {
     try {
-      const result = await this.uploadsService.validatePattern();
-      return result;
+      const zipPath = await this.uploadsService.validatePattern();
+
+      // Envoyer le fichier ZIP en réponse
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', 'attachment; filename=newPackages.zip');
+      const fileStream = fs.createReadStream(zipPath);
+      fileStream.pipe(res);
+
+      // // Nettoyer le fichier temporaire après l'envoi
+      // fileStream.on('end', () => {
+      //   fs.unlink(zipPath, (err) => {
+      //     if (err) {
+      //       console.error('Error removing file:', err.message);
+      //     }
+      //   });
+      // });
+
     } catch (error) {
       throw new HttpException(error.message, error.status);
     }

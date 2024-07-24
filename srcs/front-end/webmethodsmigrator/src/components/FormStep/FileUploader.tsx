@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useAxios } from '../../AxiosContext';
 
 interface FileUploaderProps {
-  isUploaded: boolean; // Add this line
-  onFileUpload: (success: boolean) => void;
+  onNext: () => void;
   onPrevious: () => void;
 }
 
-const FileUploader: React.FC<FileUploaderProps> = ({ isUploaded, onFileUpload, onPrevious }) => {
+const FileUploader: React.FC<FileUploaderProps> = ({onNext, onPrevious }) => {
   const [error, setError] = useState<string | null>(null);
+  const [isUploaded, setIsUploaded] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const axios = useAxios();
 
@@ -25,32 +25,52 @@ const FileUploader: React.FC<FileUploaderProps> = ({ isUploaded, onFileUpload, o
           const response = await axios.post("/uploads/entryData", formData);
 
           if (response.status === 201) {
-            onFileUpload(true);
             alert("File uploaded successfully!");
+            setIsUploaded(true); // Update the state to enable the "Next Step" button
           } else {
             setError("Error uploading file. Please try again.");
-            onFileUpload(false);
+            setIsUploaded(false); // Ensure that the "Next Step" button remains disabled
           }
         } catch (error) {
           setError("Error uploading file. Please try again.");
-          onFileUpload(false);
+          setIsUploaded(false); // Ensure that the "Next Step" button remains disabled
         } finally {
           setIsUploading(false);
         }
       } else {
         setError("Please upload a valid .txt file.");
+        setIsUploaded(false); // Ensure that the "Next Step" button remains disabled
       }
     }
   };
 
   return (
     <div className="file-uploader">
-      <input type="file" accept=".txt" onChange={handleFileChange} disabled={isUploading} />
+      <input 
+        type="file" 
+        accept=".txt" 
+        onChange={handleFileChange} 
+        disabled={isUploading} 
+      />
       {error && <p className="error">{error}</p>}
       {isUploading && <p>Uploading...</p>}
       <div className="form-buttons">
-        <button type="button" className="prev-button" onClick={onPrevious} disabled={isUploading}>Previous</button>
-        <button type="button" className="next-button" disabled={!isUploaded || isUploading}>Next Step</button>
+        <button 
+          type="button" 
+          className="prev-button" 
+          onClick={onPrevious} 
+          disabled={isUploading}
+        >
+          Previous
+        </button>
+        <button 
+          type="button" 
+          className="next-button" 
+          onClick={onNext} 
+          disabled={!isUploaded || isUploading}
+        >
+          Next Step
+        </button>
       </div>
     </div>
   );

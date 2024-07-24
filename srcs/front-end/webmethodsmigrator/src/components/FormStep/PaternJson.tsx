@@ -4,12 +4,11 @@ import Popup from './Popup';
 import DisplayPackagesTreeStructure from './DisplayPackagesTreeStructure ';
 
 interface PaternJsonProps {
-  onJsonSubmit: (success: boolean) => void;
   onPrevious: () => void;
   onNext: () => void;
 }
 
-const PaternJson: React.FC<PaternJsonProps> = ({ onJsonSubmit, onPrevious, onNext }) => {
+const PaternJson: React.FC<PaternJsonProps> = ({ onPrevious, onNext }) => {
   const [jsonInput, setJsonInput] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [jsonResult, setJsonResult] = useState<any | null>(null);
@@ -33,7 +32,6 @@ const PaternJson: React.FC<PaternJsonProps> = ({ onJsonSubmit, onPrevious, onNex
       } else {
         console.log('Error submitting JSON:', response.status);
         setError('Error submitting JSON. Please try again later.');
-        onJsonSubmit(false);
       }
     } catch (error) {
       if (error instanceof SyntaxError) {
@@ -41,27 +39,12 @@ const PaternJson: React.FC<PaternJsonProps> = ({ onJsonSubmit, onPrevious, onNex
       } else {
         setError('Error submitting JSON. Please try again later.');
       }
-      onJsonSubmit(false);
     }
   };
 
   const handleConfirm = async () => {
-    try {
-      console.log('Confirm button clicked');
-      const confirmResponse = await axios.post('/uploads/pattern/validate'); // Remplacez par l'URL de validation appropriée
-      if (confirmResponse.status === 201) {
-        console.log('Confirmation successful');
-        onJsonSubmit(true);
-        onNext(); // Passer à l'étape suivante seulement après confirmation
-      } else {
-        alert('Confirmation failed. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error confirming:', error);
-      alert('Error confirming. Please try again later.');
-    } finally {
-      setIsPopupVisible(false); // Ferme le popup après confirmation ou erreur
-    }
+    handlePopupClose(); // Fermer le popup
+    onNext(); // Pser à l'étape suivante seulement après confirmation
   };
 
   const handlePopupClose = () => {
