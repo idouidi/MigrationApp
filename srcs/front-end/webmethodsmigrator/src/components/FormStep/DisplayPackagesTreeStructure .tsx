@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaFolder, FaFolderOpen } from 'react-icons/fa';
 
 interface Service {
@@ -25,10 +25,12 @@ interface DisplayPackagesTreeStructureProps {
 }
 
 const DisplayPackagesTreeStructure: React.FC<DisplayPackagesTreeStructureProps> = ({ data }) => {
-  const [openNodes, setOpenNodes] = useState<{ [key: string]: boolean }>({});
+  console.log("Received data:", data); // Ajoutez cette ligne pour vérifier les données
+
+  const [openNodes, setOpenNodes] = React.useState<{ [key: string]: boolean }>({});
 
   const toggleNode = (nodeName: string) => {
-    setOpenNodes((prevState) => ({
+    setOpenNodes(prevState => ({
       ...prevState,
       [nodeName]: !prevState[nodeName],
     }));
@@ -37,12 +39,12 @@ const DisplayPackagesTreeStructure: React.FC<DisplayPackagesTreeStructureProps> 
   const renderTree = (services: Service[]) => {
     const tree: { [key: string]: any } = {};
 
-    services.forEach((service) => {
+    services.forEach(service => {
       const [path, finalPart] = service.newName.split(':');
       const parts = path.split('.');
       let current = tree;
 
-      parts.forEach((part) => {
+      parts.forEach(part => {
         if (!current[part]) current[part] = {};
         current = current[part];
       });
@@ -52,7 +54,7 @@ const DisplayPackagesTreeStructure: React.FC<DisplayPackagesTreeStructureProps> 
     });
 
     const renderNode = (node: { [key: string]: any }, path: string[] = []) => {
-      return Object.keys(node).map((key) => {
+      return Object.keys(node).map(key => {
         const newPath = [...path, key];
         const nodePath = newPath.join('.');
 
@@ -67,7 +69,7 @@ const DisplayPackagesTreeStructure: React.FC<DisplayPackagesTreeStructureProps> 
             <div
               onClick={() => toggleNode(nodePath)}
               className="folder-icon"
-              style={{ display: 'flex', alignItems: 'center' }}
+              style={{ display: 'flex'}}
             >
               {openNodes[nodePath] ? <FaFolderOpen /> : <FaFolder />}
               <span style={{ marginLeft: '5px' }}>{key}</span>
@@ -83,14 +85,14 @@ const DisplayPackagesTreeStructure: React.FC<DisplayPackagesTreeStructureProps> 
 
   return (
     <div>
-      <h3>Services Refactor Docs</h3>
+      <h2>Visualisation of new Packages</h2>
       <div className="scrollable-box">
-        {data.servicesRefactorDocs.map((pkg) => (
+        {data.servicesRefactorDocs.map(pkg => (
           <div key={pkg.targetpkg}>
             <div
               onClick={() => toggleNode(pkg.targetpkg)}
               className="folder-icon"
-              style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+              style={{ cursor: 'pointer', display: 'flex'}}
             >
               {openNodes[pkg.targetpkg] ? <FaFolderOpen /> : <FaFolder />}
               <span style={{ marginLeft: '5px' }}>{pkg.targetpkg}</span>

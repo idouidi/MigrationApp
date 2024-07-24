@@ -16,7 +16,7 @@ const Popup: React.FC<PopupProps> = ({ onClose, onValidate, children }) => {
           {children} {/* Affiche le contenu passé en tant que children */}
         </div>
         <div className="popup-footer">
-          {onValidate && <button className="popup-button" onClick={onValidate}>Valide</button>}
+          {onValidate && <button className="popup-button" onClick={onValidate}>Confirm</button>}
           <button className="popup-button" onClick={onClose}>Back</button>
         </div>
       </div>

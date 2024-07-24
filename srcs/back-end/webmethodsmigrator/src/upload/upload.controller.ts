@@ -51,4 +51,14 @@ export class UploadController {
       throw new HttpException(error.message, error.status);
     }
   }
+  
+  @Post('pattern/validate')
+  async validatePattern(){
+    try {
+      const result = await this.uploadsService.validatePattern();
+      return result;
+    } catch (error) {
+      throw new HttpException(error.message, error.status);
+    }
+  }
 }

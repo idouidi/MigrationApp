@@ -3,6 +3,7 @@ import { join } from 'path';
 import * as fs from 'fs';
 import { CreateUploadDto } from './dto/create-upload.dto';
 import * as xml2js from 'xml2js';
+import * as archiver from 'archiver';
 
 interface Service {
   oldName: string;
@@ -28,6 +29,10 @@ export class UploadService {
   
   private readonly xmlDicoDir = join(__dirname, '..', '..', 'uploads', 'ManageDico');
   private readonly xmlDicoFilePath = join(this.xmlDicoDir, 'Dico.xml');
+
+  private readonly newPackagesDir = join(__dirname, '..', '..', 'ManagePackages', 'new');
+  private readonly refPackagesDir = join(__dirname, '..', '..', 'ManagePackages', 'ref');
+
   
   private readonly patternsDir = join(__dirname, '..', '..', 'settings');
   private readonly patternsFilePath = join(this.patternsDir, 'packagesPatterns.json');
@@ -175,4 +180,48 @@ export class UploadService {
       throw new HttpException('File upload failed', HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
+
+  async validatePattern() {
+    try {
+      // Créer un fichier ZIP contenant tous les répertoires de this.newPackagesDir
+      const outputZipPath = join(__dirname, 'newPackages.zip');
+      const output = fs.createWriteStream(outputZipPath);
+      const archive = archiver('zip', {
+        zlib: { level: 9 } // Niveau de compression maximum
+      });
+  
+      // Gérer les événements de flux
+      output.on('close', () => {
+        console.log(`${archive.pointer()} total bytes`);
+        console.log('archiver has been finalized and the output file descriptor has closed.');
+      });
+  
+      archive.on('warning', (err) => {
+        if (err.code !== 'ENOENT') {
+          throw err;
+        }
+      });
+  
+      archive.on('error', (err) => {
+        throw err;
+      });
+  
+      // Lancer l'archivage
+      archive.pipe(output);
+  
+      // Ajouter les répertoires et fichiers de this.newPackagesDir
+      archive.directory(this.refPackagesDir, false);
+  
+      await archive.finalize();
+  
+      return {
+        statusCode: HttpStatus.CREATED,
+        message: 'Pattern validation successful!',
+        zipPath: outputZipPath // Vous pouvez également retourner le chemin du fichier ZIP si nécessaire
+      };
+    } catch (error) {
+      throw new HttpException('Error during pattern validation', HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+  
 }

@@ -1,13 +1,13 @@
-// src/components/FileUploader.tsx
-
 import React, { useState } from 'react';
 import { useAxios } from '../../AxiosContext';
 
 interface FileUploaderProps {
+  isUploaded: boolean; // Add this line
   onFileUpload: (success: boolean) => void;
+  onPrevious: () => void;
 }
 
-const FileUploader: React.FC<FileUploaderProps> = ({ onFileUpload }) => {
+const FileUploader: React.FC<FileUploaderProps> = ({ isUploaded, onFileUpload, onPrevious }) => {
   const [error, setError] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const axios = useAxios();
@@ -15,7 +15,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileUpload }) => {
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      if (file.type === "text/plain") { 
+      if (file.type === "text/plain") {
         setError(null);
         setIsUploading(true);
         try {
@@ -48,6 +48,10 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileUpload }) => {
       <input type="file" accept=".txt" onChange={handleFileChange} disabled={isUploading} />
       {error && <p className="error">{error}</p>}
       {isUploading && <p>Uploading...</p>}
+      <div className="form-buttons">
+        <button type="button" className="prev-button" onClick={onPrevious} disabled={isUploading}>Previous</button>
+        <button type="button" className="next-button" disabled={!isUploaded || isUploading}>Next Step</button>
+      </div>
     </div>
   );
 };

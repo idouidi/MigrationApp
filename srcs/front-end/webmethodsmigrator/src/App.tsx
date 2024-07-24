@@ -1,23 +1,26 @@
-// src/App.tsx
-
 import React, { useState } from 'react';
 import FormStep from './components/FormStep/FormStep';
-import FormButtons from './components/FormStep/FormButton';
 import FileUploader from './components/FormStep/FileUploader';
 import PaternJson from './components/FormStep/PaternJson';
 import './App.css';
 
 const App: React.FC = () => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(2);
   const [isUploaded, setIsUploaded] = useState(false);
   const [isJsonSubmitted, setIsJsonSubmitted] = useState(false);
 
   const handleFileUpload = (success: boolean) => {
     setIsUploaded(success);
+    if (success) {
+      moveToNextStep();  // Move to next step after successful upload
+    }
   };
 
   const handleJsonSubmit = (success: boolean) => {
     setIsJsonSubmitted(success);
+    if (success) {
+      moveToNextStep();  // Move to next step after successful JSON submission
+    }
   };
 
   const handlePrevious = () => {
@@ -26,27 +29,34 @@ const App: React.FC = () => {
     }
   };
 
-  const handleNext = () => {
-    const step = steps.find(step => step.stepNumber === currentStep);
-    if (step?.validator()) {
-      setCurrentStep(currentStep + 1);
-    } else {
-      alert(step?.validationMessage);
-    }
+  const moveToNextStep = () => {
+    setCurrentStep(currentStep + 1);
   };
 
   const steps = [
     {
       stepNumber: 1,
       description: 'Upload your file containing, list of trigger, documentfile, service, etc...',
-      content: <FileUploader onFileUpload={handleFileUpload} />,
+      content: (
+        <FileUploader
+          isUploaded={isUploaded}  // Pass the isUploaded state
+          onFileUpload={handleFileUpload}
+          onPrevious={handlePrevious}
+        />
+      ),
       validator: () => isUploaded,
       validationMessage: 'Please upload a file first.'
     },
     {
       stepNumber: 2,
       description: 'Enter your JSON pattern.',
-      content: <PaternJson onJsonSubmit={handleJsonSubmit}/>,
+      content: (
+        <PaternJson
+          onJsonSubmit={handleJsonSubmit}
+          onPrevious={handlePrevious}
+          onNext={moveToNextStep}
+        />
+      ),
       validator: () => isJsonSubmitted,
       validationMessage: 'Please submit a valid JSON first.'
     }
@@ -66,7 +76,6 @@ const App: React.FC = () => {
             {currentStepConfig.content}
           </FormStep>
         )}
-        <FormButtons onPrevious={handlePrevious} onNext={handleNext} />
       </form>
     </div>
   );
