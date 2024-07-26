@@ -6,7 +6,7 @@ import './App.css';
 import FileDownloader from './components/FormStep/FileDownloader';
 
 const App: React.FC = () => {
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(1);
  
   const handlePrevious = () => {
     if (currentStep > 1) {

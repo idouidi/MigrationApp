@@ -1,3 +1,238 @@
 {
-  "test": "test"
+  "transverse": {
+    "sm": {
+      "alfa": {
+        "canonical": "TransverseSmAlfaCanonical.transverse.sm.canonical",
+        "default": "TransverseSmAlfa.transverse.sm"
+      },
+      "alis": {
+        "canonical": "TransverseSmAlisCanonical.transverse.sm.canonical",
+        "default": "TransverseSmAlis.transverse.sm"
+      },
+      "arkas": {
+        "canonical": "TransverseSmArkasCanonical.transverse.sm.canonical",
+        "default": "TransverseSmArkas.transverse.sm"
+      },
+      "boluda": {
+        "canonical": "TransverseSmBoludaCanonical.transverse.sm.canonical",
+        "default": "TransverseSmBoluda.transverse.sm"
+      },
+      "cosco": {
+        "canonical": "TransverseSmCoscoCanonical.transverse.sm.canonical",
+        "b2b.hub": "TransverseSmCoscoB2b.transverse.sm.b2b",
+        "default": "TransverseSmCosco.transverse.sm"
+      },
+      "grimaldi": {
+        "canonical": "TransverseSmGrimaldiCanonical.transverse.sm.canonical",
+        "default": "TransverseSmGrimaldi.transverse.sm"
+      },
+      "hapag": {
+        "canonical": "TransverseSmHapagCanonical.transverse.sm.canonical",
+        "default": "TransverseSmHapag.transverse.sm"
+      },
+      "hmm": {
+        "canonical": "TransverseSmHmmCanonical.transverse.sm.canonical",
+        "default": "TransverseSmHmm.transverse.sm"
+      },
+      "hoegh": {
+        "canonical": "TransverseSmHoeghCanonical.transverse.sm.canonical",
+        "default": "TransverseSmHoegh.transverse.sm"
+      },
+      "karim": {
+        "export": {
+          "canonical": "TransverseSmKarimExportCanonical.transverse.sm.canonical",
+          "default": "TransverseSmKarimExport.transverse.sm"
+        }
+      },
+      "marguisa": {
+        "canonical": "TransverseSmMarguisaCanonical.transverse.sm.canonical",
+        "default": "TransverseSmMarguisa.transverse.sm"
+      },
+      "msc": {
+        "canonical": "TransverseSmMscCanonical.transverse.sm.canonical",
+        "default": "TransverseSmMsc.transverse.sm"
+      },
+      "niledutch": {
+        "canonical": "TransverseSmNiledutchCanonical.transverse.sm.canonical",
+        "default": "TransverseSmNiledutch.transverse.sm"
+      },
+      "nmt": {
+        "canonical": "TransverseSmNMTCanonical.transverse.sm.canonical",
+        "default": "TransverseSmNMT.transverse.sm"
+      },
+      "nyk": {
+        "canonical": "TransverseSmNYKCanonical.transverse.sm.canonical",
+        "default": "TransverseSmNYK.transverse.sm"
+      },
+      "oney": {
+        "canonical": "TransverseSmOneyCanonical.transverse.sm.canonical",
+        "default": "TransverseSmOney.transverse.sm"
+      },
+      "oocl": {
+        "canonical": "TransverseSmOOCLCanonical.transverse.sm.canonical",
+        "default": "TransverseSmOOCL.transverse.sm"
+      },
+      "canonical": "TransverseSmCanonical",
+      "b2bHub": "TransverseSmB2b.transverse.sm",
+      "default": "TransverseSm.transverse.sm"
+    }
+  },
+  "colgate": {
+    "speed.in": {
+      "b2b": {
+        "hub": "ColgateSpeedInboundB2b"
+      },
+      "canonical": "ColgateSpeedInboundCanonical",
+      "default": "ColgateSpeedInbound"
+    },
+    "speed.out": {
+      "canonical": "ColgateSpeedOutboundCanonical",
+      "default": "ColgateSpeedOutbound"
+    }
+  },
+  "mdm": {
+    "norms": {
+      "moira": {
+        "canonical": "MdmNormsMoiraCanonical.canonical",
+        "default": "MdmNormsMoira"
+      }
+    },
+    "linktrucker": "LinkPartners.trucker.moira",
+    "tms": "LinkPartnersVessel",
+    "moira": {
+      "broadcastPeople": "LinkPartnersBroadcastPeople",
+      "vessel": "LinkPartnersVessel",
+      "userInfo": "LinkPartnersUserInfo"
+    },
+    "iam": {
+      "broadcastPeople": "LinkPartnersBroadcastPeople",
+      "userInfo": "LinkPartnersUserInfo"
+    }
+  },
+  "karim": {
+    "export": {
+      "b2b": {
+        "hub": "KarimExportB2b.b2b"
+      }
+    }
+  },
+  "arkas": {
+    "b2b": "ArkasB2b.b2b"
+  },
+  "gatlas": {
+    "axe3": {
+      "canonical": "GatlasAxe3Canonical.axe3.canonical",
+      "default": "GatlasAxe3.axe3"
+    },
+    "invoice": {
+      "v2": {
+        "canonical": "GatlasInvoiceV2Canonical.v2.canonical",
+        "default": "GatlasInvoiceV2.v2"
+      }
+    }
+  },
+  "ged": {
+    "hub": {
+      "canonical": "GedHubCanonical.canonical",
+      "default": "GedHub"
+    }
+  },
+  "grimaldi": {
+    "b2b": "GrimaldiB2b.b2b"
+  },
+  "hapag": {
+    "b2b": "HapagB2b.b2b"
+  },
+  "hermes": {
+    "axe3": "HermesAxe3",
+    "invoice": {
+      "canonical": "HermesInvoiceCanonical.canonical",
+      "default": "HermesInvoice"
+    }
+  },
+  "icms": {
+    "kenya": {
+      "b2b": "IcmsKenyaB2b.b2b"
+    },
+    "douane": {
+      "kenya": {
+        "canonical": "IcmsDouaneKeynaCanonical.canonical"
+      }
+    },
+    "default": "IcmsKenya"
+  },
+  "irisAfrica": {
+    "bank": {
+      "canonical": "IrisAfricaBankCanonical.canonical",
+      "b2b": "IrisAfricaBankB2b.b2b",
+      "default": "IrisAfricaBank"
+    }
+  },
+  "maersk": {
+    "somalie": {
+      "canonical": "MaerskSomalieCanonical.canonical",
+      "default": "MaerskSomalie"
+    }
+  },
+  "marguisaBus": {
+    "b2b": "MarguisaBusB2b.b2b",
+    "canonical": "MarguisaBusCanonical.canonical"
+  },
+  "moira": {
+    "rdm": {
+      "canonical": "MoiraRDMCanonical.canonical",
+      "default": "MoiraRDM"
+    }
+  },
+  "msc": {
+    "b2b": "MscB2b.b2b"
+  },
+  "niledutch": {
+    "b2b": "NiledutchB2b.b2b",
+    "canonical": "NiledutchCanonical.canonical",
+    "default": "Niledutch"
+  },
+  "sage": {
+    "canonical": "SageCanonical.canonical",
+    "default": "Sage"
+  },
+  "linktrucker": {
+    "infocentre": "LinkPartners.trucker.infocentre"
+  },
+  "http": {
+    "b2b": {
+      "priv": "FmkB2B.priv.http",
+      "pub": "FmkB2B.pub.http",
+      "canonical": "FmkB2B.docs.http",
+      "utils": "FmkB2B.utils",
+      "docs": "FmkB2B.docs.http",
+      "triggers": "FmkB2B.triggers.http"
+    }
+  },
+  "b2b": {
+    "hub": {
+      "polling": {
+        "canonical": "B2bHubPolling.canonical",
+        "default": "B2bHubPolling"
+      },
+      "as2": {
+        "As2B2bHub": "As2B2B",
+        "default": "As2B2B"
+      }
+    },
+    "polling": {
+      "canonical": "B2bHubPolling.canonical"
+    },
+    "location": "MdmMoiraLocation",
+    "party": "MdmMoiraParty",
+    "default": "FmkB2B"
+  },
+  "polling": {
+    "common": "PollingCommon"
+  },
+  "monitoring": "FmkMonitoring",
+  "public": "FmkPublic",
+  "framework": "FmkPublic",
+  "as2": "As2",
+  "edi": "Edi"
 }

@@ -21,16 +21,17 @@ fs.readFile('entry.txt', 'utf8', (err, data) => {
   const uniqueString = uniqueLinesArray.join('\n');
 
   const regex = /'([^']*)'\s+is using \d+ element(?:s)?/g;
-  const regex2= /^(?!Wm|Agl).*\//gm;
+  //const regex2= /^(?!Wm|Agl).*\//gm;
   const regex3= /^Agl.*\n?/gm;
   const regex4= /^Wm.*\n?/gm;
 
+
   let cleanedData = uniqueString.replace(regex, '$1');
-  cleanedData = cleanedData.replace(regex2, '');
+  //cleanedData = cleanedData.replace(regex2, '');
   cleanedData = cleanedData.replace(regex3, '');
   cleanedData = cleanedData.replace(regex4, '');
   cleanedData = cleanedData.split('\n')
-  .filter(line => line.trim() !== '')
+  .filter(line => line.trim() !== '')  
   .join('\n');
 
   console.log(

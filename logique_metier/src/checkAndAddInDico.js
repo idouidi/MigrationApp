@@ -1,7 +1,7 @@
 const fs = require('fs');
 const xml2js = require('xml2js');
-const patterns = require('../settings/packagesPatterns');
-const toClean = require('../settings/toCleanPatterns');
+const patterns = require('./settings/packagesPatterns');
+const toClean = require('./settings/toCleanPatterns');
 
 function checkAndAddInDico(dictionnary, packagesList, newRootName, newDictionnary = dictionnary) {
 
@@ -47,6 +47,7 @@ function checkAndAddInDico(dictionnary, packagesList, newRootName, newDictionnar
                     if (!found) {
                         console.log("added : " + package)
                         let targetPkgExists = false;
+                        package = package.replace(/[.:]/g, "/");
                         for (const record of mapping) {
                             const { packageName, newServiceName } = generateNewNames(package, patterns);
                             const value = record.value[0]._;
@@ -153,8 +154,9 @@ function checkAndAddInDico(dictionnary, packagesList, newRootName, newDictionnar
                     shortestPath = clean(toClean, shortestPath)
                     longestPath = clean(toClean, longestPath)
                     let pkgrootname = longestPath.replace(/\.(.*)/, "")
+                    shortestPath = shortestPath.replace(/[.:]/g, "/");
 
-                    return { packageName: newRootName + pkgrootname, newServiceName: newRootName + longestPath + shortestPath };
+                    return { packageName: newRootName + pkgrootname, newServiceName: newRootName + longestPath + "/" + newRootName + longestPath + shortestPath };
                 }
 
                 const builder = new xml2js.Builder();

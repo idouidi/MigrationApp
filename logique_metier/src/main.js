@@ -11,7 +11,7 @@ generatesPackagesFromDico('../Run/ManageDico/OutboundDico.xml', '/home/NicKOOU/A
 
 //generateExcelFromXml("./in/dico_simon.xml", "./out/dico_simon.xlsx");
 
-// checkAndAddInDico("../Run/ManageDico/InboundDico.xml", "../Run/ParseInput/output.txt", "Agl", "../Run/ManageDico/OutboundDico.xml");
+checkAndAddInDico("../Run/ManageDico/InboundDico.xml", "../Run/ParseInput/output.txt", "Agl", "../Run/ManageDico/OutboundDico.xml");
 
 
 //replaceElementsInFolderFromDicoService("./out/Resultdico.xml", './settings/regexToReplaceInFile.txt', "./toReplace", "blx")

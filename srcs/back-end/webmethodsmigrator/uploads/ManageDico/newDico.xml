@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Values version="2.0">
+  <array name="servicesRefactorDocs" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="targetpkg">AglSage</value>
+      <array name="services" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._outbound.services.pub:initSage</value>
+          <value name="newName">AglSage.pub:initSage</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.triggers:outboundB2bPollingTrigger</value>
+          <value name="newName">AglSage.triggers:outboundB2bPollingTrigger</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.services.pub:processSage</value>
+          <value name="newName">AglSage.pub:processSage</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.services.priv:mappingToHub</value>
+          <value name="newName">AglSage.priv:mappingToHub</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="targetpkg">AglSOUGE</value>
+      <array name="services" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._outbound.services.pub:initSage</value>
+          <value name="newName">AglSage.pub:initSage</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.triggers:outboundB2bPollingTrigger</value>
+          <value name="newName">AglSage.triggers:outboundB2bPollingTrigger</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.services.pub:processSage</value>
+          <value name="newName">AglSage.pub:processSage</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.sage._inbound.services.priv:mappingToHub</value>
+          <value name="newName">AglSage.priv:mappingToHub</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="targetpkg">AglLinkPartnersVessel</value>
+      <array name="services" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.canonical.docs:vesselMessageJms</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/vesselMessageJms</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.canonical.docs.vesselName:vesselNameDictionary</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/vesselNameDictionary</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.canonical.docs.vesselName:vesselNameSchema</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/vesselNameSchema</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.canonical.docs:mercureBroadcastTransacShemaDT</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/mercureBroadcastTransacShemaDT</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.canonical.docs:pegaseBroadcastTransacShemaDT</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/pegaseBroadcastTransacShemaDT</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.canonical.docs:mercureBroadcastTransac</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/mercureBroadcastTransac</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.canonical.docs:pegaseBroadcastTransac</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/pegaseBroadcastTransac</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.canonical.docs:pegaseBroadcastTransacShema</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/pegaseBroadcastTransacShema</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.b2b.gateway._inbound.services.pub:processMoiraJmsFiles</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/pub/processMoiraJmsFiles</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.canonical.docs:moiraVesselFuncTpa</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/moiraVesselFuncTpa</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.canonical.docs:tpaParams</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/tpaParams</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.b2b.gateway._inbound.services.pub:receiveMoiraVesselNameJms</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/pub/receiveMoiraVesselNameJms</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.b2b.gateway._inbound.services.priv:routeToTn</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/priv/routeToTn</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.b2b.gateway._inbound.services.priv:modInts</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/priv/modInts</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.b2b.gateway._outbound.services.pub:publishMoiraVesselName</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/pub/publishMoiraVesselName</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.canonical.docs:moiraVesselName</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/moiraVesselName</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.canonical.docs:technicalHeader</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/technicalHeader</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel._inbound.triggers:receiveMoiraVesselNameTrigger</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/triggers/receiveMoiraVesselNameTrigger</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel._inbound.services.pub:receiveMoiraVesselName</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/pub/receiveMoiraVesselName</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel._inbound.services.priv:getMoiraVesselNameDetails</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/priv/getMoiraVesselNameDetails</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel._inbound.adaptersServices:callSelectVesselPivot</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/adaptersServices/callSelectVesselPivot</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.adapters:callSelectVesselPivot</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/adapters/callSelectVesselPivot</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.connections:vesselMoiraDataBaseConnection</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/connections/vesselMoiraDataBaseConnection</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.canonical.docs:vesselNameDetailsCanonical</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/etailsCanonical</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.vesselName._inbound.triggers:receiveVesselNameCanonicalTmsTrigger</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/triggers/receiveVesselNameCanonicalTmsTrigger</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.vesselName._inbound.services.pub:receiveVesselNameCanonical</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/pub/receiveVesselNameCanonical</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.canonical.docs:vesselNameCanonical</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/anonical</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.vesselName._inbound.services.priv:mapVesselNameCanonicalToTmsVesselName</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/priv/mapVesselNameCanonicalToTmsVesselName</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.vesselName._inbound.services.priv:formatTmsFloat</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/priv/formatTmsFloat</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.vesselName._inbound.services.priv:formatTmsInteger</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/priv/formatTmsInteger</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.vesselName._inbound.services.priv:TRANSCO_code_immo</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/priv/TRANSCO_code_immo</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.canonical.docs:technicalHeader</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/technicalHeader</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.canonical.docs.vesselName:tmsVesselName</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/tmsVesselName</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.b2b.gateway.vesselName._outbound.triggers:receiveMdmmsVesselNameTrigger</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/triggers/receiveMdmmsVesselNameTrigger</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.b2b.gateway.vesselName._outbound.services.pub:sendMdmmsVesselNameToMdmMs</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/pub/sendMdmmsVesselNameToMdmMs</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.moira.vessel.canonical.docs:vesselNameTechTpa</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs/echTpa</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.b2b.gateway.vesselName._outbound.services.priv:httpCall</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/priv/httpCall</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.canonical.docs.mdmMs:responseHttp</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/canonical/docs//responseHttp</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.b2b.gateway.vesselName._outbound.triggers:receiveTmsVesselNameTrigger</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/triggers/receiveTmsVesselNameTrigger</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.mdm.tms.b2b.gateway.vesselName._outbound.services.pub:sendTmsVesselNameToTms</value>
+          <value name="newName">AglLinkPartnersVessel/AglLinkPartnersVessel/pub/sendTmsVesselNameToTms</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="targetpkg">AglFmkB2B</value>
+      <array name="services" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.ariane.b2b.services.mail:sendMailErrorToArianeV2</value>
+          <value name="newName">AglFmkB2B/AglFmkB2B/mail/sendMailErrorToArianeV2</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.ariane.b2b.utils:getServerName</value>
+          <value name="newName">AglFmkB2B/AglFmkB2B/utils/getServerName</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.ariane.b2b.utils:getActiveEmails</value>
+          <value name="newName">AglFmkB2B/AglFmkB2B/utils/getActiveEmails</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.b2b.services.pub:getTpaData</value>
+          <value name="newName">AglFmkB2B/AglFmkB2B/pub/getTpaData</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.b2b.services.pub:getInternalID</value>
+          <value name="newName">AglFmkB2B/AglFmkB2B/pub/getInternalID</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.b2b.services.priv:getInternalIdFromMemcache</value>
+          <value name="newName">AglFmkB2B/AglFmkB2B/priv/getInternalIdFromMemcache</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.b2b.services.priv:putInternalIdToMemcache</value>
+          <value name="newName">AglFmkB2B/AglFmkB2B/priv/putInternalIdToMemcache</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.b2b.tn:routeToTn</value>
+          <value name="newName">AglFmkB2B/AglFmkB2B/tn/routeToTn</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="targetpkg">AglFmkPublic</value>
+      <array name="services" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.env:getGlobalVariable</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/env/getGlobalVariable</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.env.utils:getVariableFromMemCache</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/env/utils/getVariableFromMemCache</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.mail.docs.canonical:ArianeCommonTechTpa</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/mail/docs/canonical/ArianeCommonTechTpa</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.mail.docs.canonical:SmtpSettings</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/mail/docs/canonical/SmtpSettings</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.tn:getTpaData</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/tn/getTpaData</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.tn.priv:getClonedTpaDataFromMemcache</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/tn/priv/getClonedTpaDataFromMemcache</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.tn.priv:putTpaDataIntoMemcache</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/tn/priv/putTpaDataIntoMemcache</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.tn.priv:getTpaDataFromMemcache</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/tn/priv/getTpaDataFromMemcache</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.file:getArchiveFileName</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/file/getArchiveFileName</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.date:getCurrentDateString</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/date/getCurrentDateString</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.file.wrappers:getFile</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/file/wrappers/getFile</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.file:getFileSize</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/file/getFileSize</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.file.wrappers:list</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/file/wrappers/list</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.file:list</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/file/list</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.file.wrappers:renameTo</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/file/wrappers/renameTo</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.file:renameTo</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/file/renameTo</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.jms.wrappers:send</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/jms/wrappers/send</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.jms.priv:getFlowBaseInfo</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/jms/priv/getFlowBaseInfo</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.misc:getServiceName</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/misc/getServiceName</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.string:buildFilePath</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/string/buildFilePath</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.file.wrappers:writeFile</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/file/wrappers/writeFile</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.file:writeFile</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/file/writeFile</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.stream:stringToStream</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/stream/stringToStream</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.string:concatAllowNull</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/string/concatAllowNull</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.misc:sleepTimeSecond</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/misc/sleepTimeSecond</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.misc:sleep</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/misc/sleep</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.services.tn:updateStatusAndLog</value>
+          <value name="newName">AglFmkPublic/AglFmkPublic/tn/updateStatusAndLog</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="targetpkg">AglFmkMonitoring</value>
+      <array name="services" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.docs:ServiceEvent</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/docs/ServiceEvent</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.services.flow.pub:logServiceEvent</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/flow/pub/logServiceEvent</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.docs:FlowEvent</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/docs/FlowEvent</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.docs:ServiceInstance</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/docs/ServiceInstance</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.services.flow.pub:logFlowEvent</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/flow/pub/logFlowEvent</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.services.flow.priv.flow:logFlowEventV2</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/flow/priv/flow/logFlowEventV2</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.services.flow.pub:logServiceEnd</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/flow/pub/logServiceEnd</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.services.flow.pub:logServiceStart</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/flow/pub/logServiceStart</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.services.flow.priv.service:logServiceEventV2</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/flow/priv/service/logServiceEventV2</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.docs:FlowInstance</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/docs/FlowInstance</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.services.flow.pub:logFlowEnd</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/flow/pub/logFlowEnd</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.services.flow.priv.flow:logFlowEndV2</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/flow/priv/flow/logFlowEndV2</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.framework.monitoring.engine.services.flow.pub:logFlowStart</value>
+          <value name="newName">AglFmkMonitoring/AglFmkMonitoring/engine/flow/pub/logFlowStart</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="targetpkg">AglAglNew</value>
+      <array name="services" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.canonical.tn.docs:tpaData</value>
+          <value name="newName">AglAglNew/AglAglNewAglNew/blx/canonical/tn/docs/tpaData</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.canonical.tn.docs:tpaDataRequest</value>
+          <value name="newName">AglAglNew/AglAglNewAglNew/blx/canonical/tn/docs/tpaDataRequest</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.ariane.canonical.docs:mailError</value>
+          <value name="newName">AglAglNew/AglAglNewAglNew/blx/ariane/canonical/docs/mailError</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.ariane.canonical.docs:ArianeCommonTechTpa</value>
+          <value name="newName">AglAglNew/AglAglNewAglNew/blx/ariane/canonical/docs/ArianeCommonTechTpa</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.ariane.canonical.docs:ArianeMailFunc</value>
+          <value name="newName">AglAglNew/AglAglNewAglNew/blx/ariane/canonical/docs/ArianeMailFunc</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="oldName">blx.canonical.tn.docs:tnStatusLog</value>
+          <value name="newName">AglAglNew/AglAglNewAglNew/blx/canonical/tn/docs/tnStatusLog</value>
+        </record>
+      </array>
+    </record>
+  </array>
+  <array name="jarsToCopy" type="record" depth="1">
+    <record javaclass="com.wm.data.ISMemDataImpl">
+      <value name="oldPkg">BlxFramework</value>
+      <value name="newPkg">AglFmkPublic</value>
+      <value name="jarName">org-apache-commons-lang.jar</value>
+    </record>
+    <record javaclass="com.wm.data.ISMemDataImpl">
+      <value name="oldPkg">BlxFramework</value>
+      <value name="newPkg">AglFmkPublic</value>
+      <value name="jarName">json.jar</value>
+    </record>
+  </array>
+</Values>
